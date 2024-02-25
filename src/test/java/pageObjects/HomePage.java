@@ -22,6 +22,11 @@ WebElement lnkRegister;
 @FindBy(xpath = "//a[contains(text(),'Login')]")   // Login link added in step5
 WebElement linkLogin;
 
+@FindBy(xpath="//input[@placeholder='Search']")  //For Search Product Test
+WebElement txtSearchbox;
+
+@FindBy(xpath="//div[@id='search']//button[@type='button']") //For Search Product Test
+WebElement btnSearch;
 
 
 public void clickMyAccount()
@@ -38,6 +43,16 @@ public void clickRegister()
 public void clickLogin()    // added in step5
 {
 	linkLogin.click();
+}
+
+public void enterProductName(String pName)   //For Search Product Test
+{
+	txtSearchbox.sendKeys(pName);
+}
+
+public void clickSearch()  //For Search Product Test
+{
+	btnSearch.click();
 }
 
 }

@@ -42,6 +42,51 @@ public class BaseClass {
         //Loading Log4j file
         logger=LogManager.getLogger(this.getClass());//Log4j
         
+        
+        /*if(p.getProperty("execution_env").equalsIgnoreCase("remote"))
+	 	{	
+		
+		DesiredCapabilities capabilities=new DesiredCapabilities();
+		
+		//os
+		if(os.equalsIgnoreCase("windows"))
+		{
+			capabilities.setPlatform(Platform.WIN11);
+		}
+		else if(os.equalsIgnoreCase("mac"))
+		{
+			capabilities.setPlatform(Platform.MAC);
+		}
+		else
+		{
+			System.out.println("No matching os..");
+			return;
+		}
+		
+		//browser
+		switch(br.toLowerCase())
+		{
+		case "chrome" : capabilities.setBrowserName("chrome"); break;
+		case "edge" : capabilities.setBrowserName("MicrosoftEdge"); break;
+		default: System.out.println("No matching browser.."); return;
+		}
+		
+		driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
+		
+	    }
+	else if(p.getProperty("execution_env").equalsIgnoreCase("local"))
+	{
+		//launching browser based on condition - locally
+		switch(br.toLowerCase())
+		{
+		case "chrome": driver=new ChromeDriver(); break;
+		case "edge": driver=new EdgeDriver(); break;
+		default: System.out.println("No matching browser..");
+					return;
+		}
+	}
+	*/
+        
               
         
         //Launching Browser based on condition
